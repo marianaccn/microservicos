@@ -1,0 +1,16 @@
+version: '3'
+
+volumes:
+  user-data:
+
+services:
+  db_nay_school_service:
+    image: postgres:14.9-alpine
+    restart: always
+    container_name: postgres-nay-school
+    environment:
+      POSTGRES_DB: nay_school_db
+      POSTGRES_USER: nay_school_user
+      POSTGRES_PASSWORD: nay_school_pwd
+    ports:
+      - "5432:5432"
