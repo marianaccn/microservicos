@@ -1,4 +1,4 @@
-package com.cora.nayschool.models
+package com.cora.nayschool.model
 
 import java.util.UUID
 

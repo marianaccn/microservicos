@@ -1,7 +1,8 @@
-package com.cora.nayschool.controllers
+package com.cora.nayschool.controller
 
-import com.cora.nayschool.dtos.BillDataRequestDTO
-import com.cora.nayschool.useCases.CreateBillUseCase
+import com.cora.nayschool.dto.BillDataRequestDTO
+import com.cora.nayschool.dto.UpdateBillDTO
+import com.cora.nayschool.useCase.BillUseCase
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -9,34 +10,36 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
+import java.util.UUID
 
 @RestController
 @RequestMapping("/bills")
 class BillsController(
-    private val createBillUseCase: CreateBillUseCase
+    private val billUseCase: BillUseCase
 ) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     fun registerBill(
         @RequestBody billDataRequestDTO: BillDataRequestDTO
-    ) = createBillUseCase.create(billDataRequestDTO)
+    ) = billUseCase.create(billDataRequestDTO)
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    fun segunda() = TesteDTO(message = "olá")
+    fun getBills() = billUseCase.getBills()
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    fun terceira() = TesteDTO(message = "olá")
+    fun updateBill(
+        @RequestBody updateBillDTO: UpdateBillDTO
+    ) = billUseCase.update(updateBillDTO)
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    fun quarta() = TesteDTO(message = "olá")
+    fun deleteBill(
+        @RequestParam billId: UUID
+    ) = billUseCase.delete(billId)
 }
-
-data class TesteDTO(
-    val message: String
-)

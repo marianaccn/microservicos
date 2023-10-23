@@ -1,4 +1,4 @@
-package com.cora.nayschool.dtos
+package com.cora.nayschool.dto
 
 import java.util.UUID
 

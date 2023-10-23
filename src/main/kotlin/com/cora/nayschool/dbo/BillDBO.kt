@@ -1,6 +1,6 @@
-package com.cora.nayschool.dbos
+package com.cora.nayschool.dbo
 
-import com.cora.nayschool.models.Bill
+import com.cora.nayschool.model.Bill
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
