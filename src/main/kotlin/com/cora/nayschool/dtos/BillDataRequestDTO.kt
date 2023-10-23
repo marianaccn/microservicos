@@ -1,6 +1,6 @@
-package com.cora.nayschool.dto
+package com.cora.nayschool.dtos
 
-import com.cora.nayschool.model.Bill
+import com.cora.nayschool.models.Bill
 import java.time.LocalDate
 
 data class BillDataRequestDTO(

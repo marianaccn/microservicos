@@ -1,6 +1,6 @@
-package com.cora.nayschool.repository
+package com.cora.nayschool.repositorys
 
-import com.cora.nayschool.dbo.BillDBO
+import com.cora.nayschool.dbos.BillDBO
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.UUID
 
