@@ -1,6 +1,6 @@
-package com.cora.nayschool.models
+package com.cora.nayschool.model
 
-import com.cora.nayschool.dtos.BillResponseDTO
+import com.cora.nayschool.dto.BillResponseDTO
 import java.time.LocalDate
 import java.util.UUID
 
